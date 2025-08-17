@@ -1,15 +1,15 @@
 import urllib.parse as urlparse
 from typing import Generator, Literal, override
 
-from obo_core.auth_flow.oauth2.schema.auth_code_stage import (
+from ab_core.auth_flow.oauth2.schema.auth_code_stage import (
     AuthCodeStageInfo,
     AuthCodeStageInfoBeginLogin,
     AuthCodeStageInfoDone,
 )
-from obo_core.auth_flow.oauth2.schema.flow_type import (
+from ab_core.auth_flow.oauth2.schema.flow_type import (
     OAuth2FlowType,
 )
-from obo_core.impersonation.impersonator import Impersonator
+from ab_core.impersonation.impersonator import Impersonator
 
 from .base import OAuth2FlowBase
 

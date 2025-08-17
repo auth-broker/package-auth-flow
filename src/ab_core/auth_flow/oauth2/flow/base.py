@@ -3,7 +3,7 @@ from typing import Generator
 
 from pydantic import AnyHttpUrl, BaseModel
 
-from obo_core.auth_flow.oauth2.schema.auth_code_stage import (
+from ab_core.auth_flow.oauth2.schema.auth_code_stage import (
     AuthCodeStageInfo,
     AuthCodeStageInfoDone,
 )
