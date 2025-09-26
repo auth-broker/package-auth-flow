@@ -8,3 +8,7 @@ services:
       - ./src:/package/src
       - ./tests:/package/tests
     command: tail -f /dev/null  # container runs indefinitely
+
+secrets:
+  github_token:
+    environment: GITHUB_TOKEN
