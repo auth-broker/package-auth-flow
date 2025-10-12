@@ -21,7 +21,7 @@ class AuthCodeStageInfoBeginLogin(AuthCodeStageInfoBase):
 
 
 class AuthCodeStageInfoDone(AuthCodeStageInfoBase):
-    event: Literal[AuthCodeStage.DONE] = AuthCodeStage.DONE
+    stage: Literal[AuthCodeStage.DONE] = AuthCodeStage.DONE
 
     auth_code: str
 
