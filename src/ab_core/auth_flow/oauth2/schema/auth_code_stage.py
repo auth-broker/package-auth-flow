@@ -27,6 +27,6 @@ class AuthCodeStageInfoDone(AuthCodeStageInfoBase):
 
 
 AuthCodeStageInfo = Annotated[
-    tuple[AuthCodeStageInfoBeginLogin, AuthCodeStageInfoDone],
+    AuthCodeStageInfoBeginLogin | AuthCodeStageInfoDone,
     Discriminator("stage"),
 ]
