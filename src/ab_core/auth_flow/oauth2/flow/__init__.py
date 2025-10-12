@@ -6,6 +6,6 @@ from .impersonation import ImpersonationOAuth2Flow
 from .template import TemplateOAuth2Flow
 
 OAuth2Flow = Annotated[
-    Union[ImpersonationOAuth2Flow, TemplateOAuth2Flow],
+    ImpersonationOAuth2Flow | TemplateOAuth2Flow,
     Discriminator("type"),
 ]

@@ -1,6 +1,6 @@
 from abc import ABC
 from enum import StrEnum
-from typing import Annotated, Literal, Optional, Tuple
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, Discriminator
 
@@ -17,7 +17,7 @@ class AuthCodeStageInfoBeginLogin(AuthCodeStageInfoBase):
     stage: Literal[AuthCodeStage.BEGIN_LOGIN] = AuthCodeStage.BEGIN_LOGIN
 
     ws_url: str
-    gui_url: Optional[str] = None
+    gui_url: str | None = None
 
 
 class AuthCodeStageInfoDone(AuthCodeStageInfoBase):
@@ -27,6 +27,6 @@ class AuthCodeStageInfoDone(AuthCodeStageInfoBase):
 
 
 AuthCodeStageInfo = Annotated[
-    Tuple[AuthCodeStageInfoBeginLogin, AuthCodeStageInfoDone],
+    tuple[AuthCodeStageInfoBeginLogin, AuthCodeStageInfoDone],
     Discriminator("stage"),
 ]
