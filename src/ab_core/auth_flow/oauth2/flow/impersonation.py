@@ -71,7 +71,7 @@ class ImpersonationOAuth2Flow(OAuth2FlowBase):
                 )
 
             # intercept the response during user interaction
-            async with self.impersonator.intercept_response_async(
+            async with self.impersonator.intercept_async(
                 context,
                 event="response",
                 cond=lambda r: r.url.startswith(str(self.idp_prefix)) and r.status == 302,
