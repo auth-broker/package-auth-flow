@@ -26,6 +26,11 @@ class AuthCodeStageInfoDone(AuthCodeStageInfoBase):
     auth_code: SecretStr
 
 
+class AuthCodeStageInfoDoneExposed(AuthCodeStageInfoDone):
+    # NOTE: This class is only used for exposing the auth code in HTTP responses
+    auth_code: str
+
+
 AuthCodeStageInfo = Annotated[
     AuthCodeStageInfoBeginLogin | AuthCodeStageInfoDone,
     Discriminator("stage"),
