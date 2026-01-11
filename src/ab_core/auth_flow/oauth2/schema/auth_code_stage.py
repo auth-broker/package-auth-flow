@@ -2,7 +2,7 @@ from abc import ABC
 from enum import StrEnum
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, Discriminator
+from pydantic import BaseModel, Discriminator, SecretStr
 
 
 class AuthCodeStage(StrEnum):
@@ -23,7 +23,7 @@ class AuthCodeStageInfoBeginLogin(AuthCodeStageInfoBase):
 class AuthCodeStageInfoDone(AuthCodeStageInfoBase):
     stage: Literal[AuthCodeStage.DONE] = AuthCodeStage.DONE
 
-    auth_code: str
+    auth_code: SecretStr
 
 
 AuthCodeStageInfo = Annotated[
